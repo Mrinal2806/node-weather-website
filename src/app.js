@@ -9,8 +9,13 @@ const forecast = require('./utils/forecast')
 console.log(__dirname)
 console.log(path.join(__dirname,'../public'))
 
-//define paths for express config
+
 const app = express()
+
+const port = process.env.PORT || 406
+
+
+//define paths for express config
 const publicdirpath = path.join(__dirname,'../public')
 const viewpath = path.join(__dirname, '../templates/views')
 const partialpath = path.join(__dirname, '../templates/partials')
@@ -128,8 +133,8 @@ app.get('*', (req, res) => {
 
 //turn the web server up
 
-app.listen(406, () => {
-    console.log('server is up on port')
+app.listen(port, () => {
+    console.log('server is up on port', port)
 })
 
 
